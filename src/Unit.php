@@ -47,7 +47,7 @@ class Unit
 
     public function takeDamage(Attack $attack)
     {
-        $this->hp -= $this->absorbDamage($attack);
+        $this->hp -= $this->armor->absorbDamage($attack);
         if ($this->hp < 0) {
             $this->hp = 0;
         }
@@ -68,12 +68,5 @@ class Unit
     {
         show("{$this->name} Muere");
         exit();
-    }
-
-    protected function absorbDamage(Attack $attack)
-    {
-        return $this->armor->absorbDamage($attack);
-
-        return $attack->getDamage();
     }
 } 

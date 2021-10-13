@@ -5,7 +5,7 @@ namespace Styde\Armors;
 use Styde\Armor;
 use Styde\Attack;
 
-class MissArmor implements Armor
+class MissArmor extends Armor
 {
     public function absorbDamage(Attack $attack) {
         $bingo = rand(1, 10);
